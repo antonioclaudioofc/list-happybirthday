@@ -1,0 +1,61 @@
+{% load bootstrap5 %}
+{% bootstrap_css %} 
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2 sidebar bg-sidebar d-flex flex-column align-items-center text-center">
+          <div class="mt-4 mb-3">
+            <img class="img-fluid rounded-circle" src="{% static 'img/perfil.jpg' %}" alt="Foto do perfil" />
+            <h2 class="fs-5 mt-2">Antonio Claudio</h2>
+            <h4 class="fs-6 color-admin">Admin</h4>
+          </div>
+          <div class="sidebar">
+            <ul class="nav flex">
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                  <i class="fa fa-calendar-minus-o me-2 "></i>
+                  Mural
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">
+                  <i class="fa fa-cog me-2 "></i>
+                  Profile
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-footer  fs-5">
+            <a class="nav-link" href="#">
+              <i class="fa fa-sign-out text-danger"></i>
+              Sair
+            </a>
+          </div>
+        </div>
+        <div class="col-10">
+          <main class="p-4">
+            {% block content %}{% endblock %}
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
