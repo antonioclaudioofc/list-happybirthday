@@ -16,3 +16,14 @@ def index(request):
     }
 
     return render(request, template_name, context)
+
+
+def register(request):
+    template_name = 'register.html'
+
+    return render(request, template_name)
+
+def profile(request):
+    template_name = 'profile.html'
+
+    return render(request, template_name)

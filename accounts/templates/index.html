@@ -1,4 +1,14 @@
 {% extends 'base.html' %} 
-{% block content %}
-<h1>Teste</h1>
+
+{% block context %}
+<section class="mt-5 mx-5">
+    <div class="d-flex justify-content-between aligh-items-center">
+        <h2>Aniversariantes</h2>
+        <a href="{% url 'accounts:register' %}" class="btn btn-success">
+            Adicionar
+            <i class="fa fa-plus-circle"></i>
+        </a>
+    </div>
+    <hr>
+</section>
 {% endblock %}

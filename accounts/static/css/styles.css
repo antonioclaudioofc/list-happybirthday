@@ -39,3 +39,10 @@
     text-align: center;
     color: #00D2CC;
 }
+
+.quads {
+    width: 208px;
+    height: 208px;
+    border-radius: 8px;
+    background-color: #F3F3F3;
+}
