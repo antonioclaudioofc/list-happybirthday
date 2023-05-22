@@ -37,7 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Birthdays(models.Model):
     nome = models.CharField('Nome', max_length=120, blank=False)
-    data_nascimento = models.TimeField('Data de nascimento', blank=False)
+    data_nascimento = models.DateField('Data de nascimento', blank=False)
     notificar_por_email = models.BooleanField(
         'Notificar?', blank=True, default=True
     )

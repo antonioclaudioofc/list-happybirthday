@@ -11,4 +11,8 @@
     </div>
     <hr>
 </section>
+{% for people in birthdays %}
+{{people.nome}}
+{{people.data_nascimento}}
+{% endfor %}
 {% endblock %}
