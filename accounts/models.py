@@ -40,7 +40,7 @@ class Birthdays(models.Model):
     data_nascimento = models.DateField('Data de nascimento', blank=False)
     notificar_por_email = models.BooleanField(
         'Notificar?', blank=True, default=True
-    )
+    ) 
 
     def __str__(self) -> str:
         return self.nome

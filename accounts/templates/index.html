@@ -1,9 +1,12 @@
 {% extends 'base.html' %} 
 
 {% block context %}
-<section class="mt-5 mx-5">
+<section class="mt-5 me-5">
     <div class="d-flex justify-content-between aligh-items-center">
-        <h2>Aniversariantes</h2>
+        <h2>
+            Aniversariantes
+            <i class="fa fa-birthday-cake" ></i>
+        </h2>
         <a href="{% url 'accounts:register' %}" class="btn btn-success">
             Adicionar
             <i class="fa fa-plus-circle"></i>
@@ -12,7 +15,7 @@
     <hr>
 </section>
 {% for people in birthdays %}
-{{people.nome}}
-{{people.data_nascimento}}
+    {{people.nome}}
+    {{people.data_nascimento}}
 {% endfor %}
 {% endblock %}

@@ -19,14 +19,17 @@
     </style>
   </head>
   <body>
-   <div class="container-fluid">
-     <div class="row">
-       <div class="col-lg-3 col-md-3">
-         <nav class="sidebar position-fixed d-flex flex-column justify-content-between">
+    <section class="row">
+      
+      <header class="col-md-3 d-flex align-items-center my-auto">
+
+        <nav class="sidebar d-flex flex-column">
+
           <figure class="d-flex flex-column">
             <img class="image-profile" src="{% static 'img/perfil.jpg' %}" alt="Foto de perfil">
             <figcaption>Antonio Claudio</figcaption>
           </figure>
+
           <ul class="navbar-nav">
             <li class="nav-item">
               <a href="{% url 'accounts:index' %}" class="nav-link" href="#">
@@ -41,22 +44,61 @@
               </a>
             </li>
           </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link out" href="#">
-                <i class="fa fa-sign-out"></i>
-                Sair
-              </a>
-            </li>
-          </ul>
-         </nav>
+
+          <a class="nav-link out" href="#">
+            <i class="fa fa-sign-out"></i>
+            Sair
+          </a>
+      
+        </nav>
+
+        <a href="#">
+          <i class="fa fa-chevron-left"></i>
+        </a>
+
+      </header>
+
+      <main class="col-md-9">
+        {% block context %}{% endblock %}
+       </main>
+
+    </section>
+     <div class="row">
+       <div class="col-md-3 flex-column">
+           <nav class="sidebar d-flex flex-column justify-content-between">
+            <figure class="d-flex flex-column">
+              <img class="image-profile" src="{% static 'img/perfil.jpg' %}" alt="Foto de perfil">
+              <figcaption>Antonio Claudio</figcaption>
+            </figure>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="{% url 'accounts:index' %}" class="nav-link" href="#">
+                  <i class="fa fa-calendar-o "></i>
+                  Mural
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'accounts:profile' %}" class="nav-link" href="#">
+                  <i class="fa fa-cog mr-4"></i>
+                  Perfil
+                </a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link out" href="#">
+                  <i class="fa fa-sign-out"></i>
+                  Sair
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <i class="fa fa-chevron-left btn btn-success"></i>
        </div>
-       <div class="col-lg-9 col-md-9">
-         <main>
-          {% block context %}{% endblock %}
-         </main>
+       <div class="col-md-9">
+       
        </div>
      </div>
-   </div>
+   </div> -->
   </body>
 </html>
