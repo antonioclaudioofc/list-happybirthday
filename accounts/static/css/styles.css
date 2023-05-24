@@ -6,10 +6,18 @@
 }
 
 .sidebar {
+    position: fixed;
+    top: 0;
+
     background-color: #001F44;
     color: #fff;
     width: 320px;
-    height: 100vh;
+    height: 100%;
+}
+
+.main-context {
+    margin-left: 356px;
+    overflow: hidden;
 }
 
 .nav-link {
@@ -41,8 +49,8 @@
 }
 
 .quads {
-    width: 208px;
-    height: 208px;
+    width: 320px;
+    height: 320px;
     border-radius: 8px;
     background-color: #F3F3F3;
 }

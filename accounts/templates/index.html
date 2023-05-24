@@ -14,8 +14,19 @@
     </div>
     <hr>
 </section>
-{% for people in birthdays %}
-    {{people.nome}}
-    {{people.data_nascimento}}
-{% endfor %}
+<div class="d-flex gap-4 flex-wrap flex-grow-1 aligh-items-center">
+    {% for people in birthdays %}
+    <div class="card" style="width: 16rem;">
+        <img src="../static/img/perfil.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{people.nome}}</h5>
+          <p class="card-text">{{people.data_nascimento}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+    
+    
+
 {% endblock %}

@@ -39,8 +39,8 @@ class RegisterForm(forms.ModelForm):
     # created_at = forms.DateTimeField('Data de criação', auto_now_add=True)
 
 class RegisterBirthdays(forms.ModelForm):
-    nome = forms.CharField(label='Nome')
-    data_nascimento = forms.DateField(label='Data de nascimento',widget=forms.DateInput(attrs={'type': 'date'}))
+    nome = forms.CharField(label='Nome', widget=forms.TextInput(attrs={'class':'form-control'}))
+    data_nascimento = forms.DateField(label='Data de nascimento',widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}))
 
     class Meta:
         model = Birthdays
