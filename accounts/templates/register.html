@@ -16,7 +16,9 @@
   enctype="multipart/form-data"
 >
   {% csrf_token %}
-  <div class="quads"></div>
+  <div class="quads d-flex justify-content-center">
+    <i class="mt-5 fa fa-user-circle-o"></i>
+  </div>
 
   <fieldset>
     {{ form.non_field_errors }} 

@@ -1,4 +1,5 @@
 {% extends 'base.html' %} 
+{% load static %}
 
 {% block context %}
 <section class="mt-5 me-5">
@@ -14,19 +15,33 @@
     </div>
     <hr>
 </section>
-<div class="d-flex gap-4 flex-wrap aligh-items-center">
-    {% for people in birthdays %}
-    <div class="card" style="width: 16rem;">
-        <img src="../static/img/perfil.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{people.nome}}</h5>
-          <p class="card-text">{{people.data_nascimento}}</p>
+
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+    {% for people in  birthdays %}
+    <div class="col" style="width: 300px;">
+
+      <div class="card">
+
+        {% if people.imagem %}
+            <img src="{{ people.imagem.url }}"  style="height: 250px; width: 100%; object-fit: cover;">
+        {% else %}
+            <img src="{% static 'img/perfil.jpg' %}"  style="height: 250px; width: 100%; object-fit: cover;">
+        {% endif %}
+
+        <div class="card-body"> 
+          <h5 class="card-title">
+            {{ people.nome }}
+          </h5>
+          <p class="card-text">
+            {{ people.data_nascimento }}
+          </p>
         </div>
+      </div>
     </div>
     {% endfor %}
 </div>
-
     
-    
-
 {% endblock %}
