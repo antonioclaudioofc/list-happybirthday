@@ -19,8 +19,7 @@ def register(request):
     context = {}
 
     if request.method == 'POST':
-        form = RegisterBirthdays(request.POST)
-
+        form = RegisterBirthdays(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('accounts:index')

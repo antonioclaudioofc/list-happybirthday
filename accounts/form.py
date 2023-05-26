@@ -41,7 +41,8 @@ class RegisterForm(forms.ModelForm):
 class RegisterBirthdays(forms.ModelForm):
     nome = forms.CharField(label='Nome', widget=forms.TextInput(attrs={'class':'form-control'}))
     data_nascimento = forms.DateField(label='Data de nascimento',widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}))
+    imagem = forms.ImageField(label='', required=False)
 
     class Meta:
         model = Birthdays
-        fields = ['nome', 'data_nascimento']
+        fields = ['nome', 'data_nascimento', 'imagem']

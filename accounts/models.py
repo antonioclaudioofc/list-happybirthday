@@ -41,6 +41,7 @@ class Birthdays(models.Model):
     notificar_por_email = models.BooleanField(
         'Notificar?', blank=True, default=True
     ) 
+    imagem = models.ImageField(upload_to='perfil/images', blank=True, null=True)
 
     def __str__(self) -> str:
         return self.nome
