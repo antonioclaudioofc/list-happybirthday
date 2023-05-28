@@ -2,6 +2,7 @@ import re
 from django.core import validators
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
+from django.conf import settings
 
 # Create your models here.
 
@@ -36,6 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class Birthdays(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='Usuário', on_delete=models.CASCADE, default=False)
     nome = models.CharField('Nome', max_length=120, blank=False)
     data_nascimento = models.DateField('Data de nascimento', blank=False)
     notificar_por_email = models.BooleanField(
