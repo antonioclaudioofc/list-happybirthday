@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-</head>
-<body>
-    <form method="post">
-        {% csrf_token %}
-
-        <fieldset>
-            {{ form.non_field_errors }}
-
-            {% for field in form %}
-            <div>
-                {{ field.label_tag }}
-                {{ field }}
-                {{ field.errors }}
+  </head>
+  <body>
+    <div class="container h-100">
+        <form class="row d-flex justify-content-center align-items-center h-100" method="post">
+          {% csrf_token %} {{ form.non_field_errors }}
+          <h2>Login</h2>
+          {% for field in form %}
+          <div class="">
+            <div class="row">
+              {{ field.label_tag }}
+              {{ field }}
+              {{ field.errors }}
             </div>
-            {% endfor %}
-        </fieldset>
+          </div>
+          {% endfor %}
+          <button>Enviar</button>
+        </form>
+    </div>
+    <div class="card bg-dark text-white">
+        <div class="card-body p-5 text-center">
 
-        <button>Enviar</button>
+          <form method="post" class="mb-md-5 mt-md-4 pb-5">
+
+            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+            <p class="text-white-50 mb-5">Please enter your login and password!</p>
+
+            <div class="form-outline form-white mb-4">
+            
+            </div>
+
+            <div class="form-outline form-white mb-4">
+              <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+              <label class="form-label" for="typePasswordX">Password</label>
+            </div>
+
+            <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+
+            <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+
+          </div>
+
+          <div>
+            <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
+            </p>
+          </div>
+
+        </div>
+    
     </form>
-</body>
+    </div>
+    </div>
+  </body>
 </html>
