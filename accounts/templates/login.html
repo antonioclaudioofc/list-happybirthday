@@ -1,5 +1,10 @@
+{% load bootstrap5 %}
+{% bootstrap_css %} 
+{% bootstrap_javascript %}
+
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,54 +12,33 @@
     <title>Login</title>
   </head>
   <body>
-    <div class="container h-100">
-        <form class="row d-flex justify-content-center align-items-center h-100" method="post">
-          {% csrf_token %} {{ form.non_field_errors }}
-          <h2>Login</h2>
-          {% for field in form %}
-          <div class="">
-            <div class="row">
-              {{ field.label_tag }}
+  </head>
+  <body>
+    <section class="h-100 d-flex flex-row">
+      <form method="post" class="w-50 m-auto">
+        {% csrf_token %}
+        <div class="card w-50 mx-auto border-0">
+          <div class="card-body">
+            <h5 class="card-title">Login</h5>
+            {% for field in form %} 
+            <div class="form-group">
+              {{ field.label_tag }} 
               {{ field }}
-              {{ field.errors }}
+              {{ field.errors }} 
+            </div>
+            {% endfor %}
+            <div class="d-flex mt-3 justify-content-center">
+              <a href="{% url 'accounts:index' %}" type="button" class="btn btn-success mx-5 mb-3">
+                 Entrar
+              </a>
             </div>
           </div>
-          {% endfor %}
-          <button>Enviar</button>
-        </form>
-    </div>
-    <div class="card bg-dark text-white">
-        <div class="card-body p-5 text-center">
-
-          <form method="post" class="mb-md-5 mt-md-4 pb-5">
-
-            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-            <p class="text-white-50 mb-5">Please enter your login and password!</p>
-
-            <div class="form-outline form-white mb-4">
-            
-            </div>
-
-            <div class="form-outline form-white mb-4">
-              <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-              <label class="form-label" for="typePasswordX">Password</label>
-            </div>
-
-            <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-
-            <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-
-          </div>
-
-          <div>
-            <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
-            </p>
-          </div>
-
         </div>
+      </form>
+      <div class="w-50">
+        <img class="w-100 h-100" src="{% static 'img/bg-login.jpg' %}" alt="">
+      </div>
+    </section>
     
-    </form>
-    </div>
-    </div>
   </body>
 </html>
