@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
-from .form import RegisterBirthdays
+from .form import RegisterBirthdays, RegisterUserForm
 from .models import Birthdays
 
 
@@ -11,13 +12,15 @@ def register_user(request):
     template_name = 'register_user.html'
 
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterUserForm(request.POST)
 
         if form.is_valid():
-            form.save()
-            return redirect(settings.LOGIN_URL)
+            user = form.save()
+            user = authenticate(username = user.username, password=form.cleaned_data['password1'])
+            login(request, user)
+            return redirect('accounts:index')
     else:
-        form = UserCreationForm()
+        form = RegisterUserForm()
 
     context = {
         'form': form
@@ -28,7 +31,7 @@ def register_user(request):
 @login_required
 def index(request):
     template_name = 'index.html'
-    birthdays = Birthdays.objects.all()
+    birthdays = Birthdays.objects.filter(user=request.user)
     
     context = {
         'birthdays': birthdays
@@ -38,7 +41,7 @@ def index(request):
 
 @login_required
 def register_birthday(request):
-    template_name = 'register.html'
+    template_name = 'register_birthday.html'
     context = {}
 
     if request.method == 'POST':

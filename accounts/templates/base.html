@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
     </style>
   </head>
-  <body>
+  <body>    
     <section class="row">
       
       <header class="col-lg-3 align-items-center">
@@ -28,7 +28,7 @@
 
           <figure class="d-flex flex-column">
             <img class="image-profile" src="{% static 'img/perfil.jpg' %}" alt="Foto de perfil">
-            <figcaption>Antonio Claudio</figcaption>
+            <figcaption>{{ user.name }}</figcaption>
           </figure>
 
           <ul class="navbar-nav">
