@@ -7,3 +7,9 @@
     background-position: center;
     background-size: cover;
 }
+
+.bg-footer {
+    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .5)) ,url('../../public/bg-footer.jpg');
+    background-position: top;
+    background-size: cover;
+}
