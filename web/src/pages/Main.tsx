@@ -1,6 +1,6 @@
-import { NavBar } from "@/components/Navbar";
+import NavBar from "@/components/Navbar";
 
-export function Main() {
+export default function Main() {
     return (
         <main className="h-screen bg-home text-white">
         <NavBar />

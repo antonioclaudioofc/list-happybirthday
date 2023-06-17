@@ -1,4 +1,4 @@
-export function Describe() {
+export default function Describe() {
     return (
         <section className="bg-[#26ABE2] text-white flex flex-col justify-center items-center">
             <h2 className="pt-16 pb-6 text-4xl">Como Funciona</h2>

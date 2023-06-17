@@ -1,6 +1,6 @@
-import { CardComment } from "@/components/CardComment";
+import CardComment from "@/components/CardComment";
 
-export function Comment() {
+export default function Comment() {
     return (
         <section className="bg-[#ccc] text-center pt-16 pb-20">
             <h2 className="text-4xl">Depoimentos</h2>

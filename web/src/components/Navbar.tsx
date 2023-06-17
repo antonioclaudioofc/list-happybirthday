@@ -2,7 +2,7 @@ import Image from 'next/image';
 import imgLogo from '../../public/logo.svg';
 
 
-export function NavBar() {
+export default function NavBar() {
     return (
         <nav className="flex justify-around items-center pt-9">
             <Image

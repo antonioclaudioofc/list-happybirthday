@@ -1,6 +1,6 @@
 // import { Star, UserCircle } from "phosphor-react";
 
-export function CardComment() {
+export default function CardComment() {
     return (
         <div className="w-80 text-justify bg-[#ddd] p-5 rounded">
             <div>

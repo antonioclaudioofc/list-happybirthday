@@ -1,6 +1,6 @@
-import { CardService } from "@/components/CardService";
+import CardService from "@/components/CardService";
 
-export function Services() {
+export default function Services() {
     return (
         <section className="text-center mt-16 mb-16">
             <h2 className="text-4xl">Recursos</h2>

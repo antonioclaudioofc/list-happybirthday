@@ -3,7 +3,7 @@ interface PropsServices {
     describe: string
 }
 
-export function CardService(props: PropsServices) {
+export default function CardService(props: PropsServices) {
     return (
         <div className="w-96">
             <div className="h-96 bg-slate-300 rounded-lg"></div>
