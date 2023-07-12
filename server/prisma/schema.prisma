@@ -11,6 +11,21 @@ datasource db {
 }
 
 model User {
-  id   String @id @default(uuid())
-  name String
+  id         String @id @default(uuid())
+  name       String
+  username   String
+  avatarUser String
+
+  birthdays Birthday[]
+}
+
+model Birthday {
+  id     String @id @default(uuid())
+  userId String
+
+  personName     String
+  dateOfBirth    DateTime
+  avatarBirthday String
+
+  user User @relation(fields: [userId], references: [id])
 }
