@@ -1,6 +1,7 @@
 import fastify from "fastify";
 import cors from "@fastify/cors";
 import { birthdayRoutes } from "./routes/birthday";
+import { authRoutes } from "./routes/auth";
 
 const app = fastify();
 
@@ -9,6 +10,7 @@ app.register(cors, {
 })
 
 app.register(birthdayRoutes);
+app.register(authRoutes);
 
 app
   .listen({
